@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: edacaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edacaks
+  template:
+    metadata:
+      labels:
+        app: edacaks 
+    spec:
+      containers:
+        - name: edacaks 
+          image: crimages.azurecr.io/edacaks
+          ports:
+          - containerPort: 8080
